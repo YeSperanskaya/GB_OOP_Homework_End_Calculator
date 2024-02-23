@@ -1,6 +1,5 @@
 package view;
 
-import servises.ChangeArray;
 import servises.ExampleSolution;
 
 public class Result {

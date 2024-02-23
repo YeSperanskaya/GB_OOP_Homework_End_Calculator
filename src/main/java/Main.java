@@ -1,3 +1,4 @@
+import calculator.Calculator;
 import view.DataInput;
 import view.Result;
 
@@ -22,7 +23,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Result result = new Result();
-        //result.start();
+        result.start();
+
 
 
 
