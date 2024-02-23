@@ -3,50 +3,27 @@ package servises;
 import calculator.Calculator;
 import view.DataInput;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 public class ChangeArray {
-    Calculator calculator = new Calculator();
-    DataInput dataInput = new DataInput();
-    List<Double> listNumbers = dataInput.getListNumbers();
-    List<String> listCommands = dataInput.getListCommands();
 
-    public void exampleSolution() {
-        int i = 0;
-        double newMeaning;
-        while (listNumbers.size() > 1) {
-            if (isExistMultyDiv()) {
-                if(listCommands.get(i).equals("*")) {
-                    newMeaning = calculator.sum(listNumbers.get(i), listNumbers.get(i+1));
-                } else if (listCommands.get(i).equals("/")) {
-                    newMeaning = calculator.division(listNumbers.get(i), listNumbers.get(i+1));
-                } else {
-                    i++;
-                }
-            } else {
-
-            }
-        }
-
-    }
+//    DataInput dataInput = new DataInput();
+List<Double> listNumbers = new ArrayList<>();
+List<String> listCommands = new ArrayList<>();
 
 
-
-    private boolean isExistMultyDiv() {
-        if (listCommands.contains("*") || listCommands.contains("/")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private void changeArray(int i, double newMeaning) {
+    public void changeArray(int i, double newMeaning) {
         listCommands.remove(i);
         listNumbers.set(i, newMeaning);
         listNumbers.remove(i+1);
     }
 
+    public ChangeArray(List<Double> listNumbers, List<String> listCommands) {
+        this.listNumbers = listNumbers;
+        this.listCommands = listCommands;
+    }
     /**
      * пока вообще содержится * или поделить надо делать только эти действия по порядку
      */

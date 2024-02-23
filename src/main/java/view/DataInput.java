@@ -73,4 +73,12 @@ public class DataInput {
     public List<String> getListCommands() {
         return listCommands;
     }
+
+    public void setListNumbers(List<Double> listNumbers) {
+        this.listNumbers = listNumbers;
+    }
+
+    public void setListCommands(List<String> listCommands) {
+        this.listCommands = listCommands;
+    }
 }

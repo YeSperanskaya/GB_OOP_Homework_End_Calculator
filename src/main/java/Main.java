@@ -1,5 +1,8 @@
 import view.DataInput;
+import view.Result;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,10 +21,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        DataInput dataInput = new DataInput();
-        dataInput.introductionOfExample();
-        System.out.println(dataInput.getListNumbers());
-        System.out.println(dataInput.getListCommands());
+        Result result = new Result();
+        //result.start();
 
 
 
