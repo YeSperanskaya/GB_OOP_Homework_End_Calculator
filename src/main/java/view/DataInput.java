@@ -21,8 +21,8 @@ public class DataInput {
                 end = false;
                 System.out.println("Команда остановлена");
             }
-
         }
+
         System.out.println("Выход из цикла DataInput");
     }
 
