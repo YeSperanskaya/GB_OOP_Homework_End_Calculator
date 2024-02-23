@@ -1,22 +1,29 @@
 package view;
 
 
+import servises.CheckingEnteredValues;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class DataInput {
+    CheckingEnteredValues checkingEnteredValues = new CheckingEnteredValues();
     List<Double> listNumbers = new ArrayList<>();
     List<String> listCommands = new ArrayList<>();
     public void introductionOfExample(){
         boolean end = true;
         while (end) {
             addedNumber();
-            addedNumber();
             addedCommand();
-            if (listCommands.contains('=')) end = false;
-        }
+            if (checkingEnteredValues.isEnd(listCommands))
+            {
+                end = false;
+                System.out.println("Команда остановлена");
+            }
 
+        }
+        System.out.println("Выход из цикла DataInput");
     }
 
     private void addedNumber() {
@@ -25,7 +32,7 @@ public class DataInput {
         String input = sc.next();
         boolean end = true;
         while (end) {
-            if(isDigit(input)) {
+            if(checkingEnteredValues.isDigit(input)) {
                 listNumbers.add(Double.valueOf(input));
                 System.out.println("В список пример добавлена цифра " + Double.valueOf(input));
                 end = false;
@@ -43,7 +50,7 @@ public class DataInput {
         String input = sc.next();
         boolean end = true;
         while (end) {
-            if(isCorrectCharacter(input)) {
+            if(checkingEnteredValues.isCorrectCharacter(input)) {
                 listCommands.add(input);
                 System.out.println("В пример добавлена команда " + input);
                 end = false;
@@ -57,22 +64,7 @@ public class DataInput {
     }
 
 
-    private boolean isDigit(String s) throws NumberFormatException {
-        try {
-            Double.parseDouble(s);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
 
-    private boolean isCorrectCharacter(String str){
-        if (str.equals("+") || str.equals("-") || str.equals("*") || str.equals("/") || str.equals("=")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public List<Double> getListNumbers() {
         return listNumbers;

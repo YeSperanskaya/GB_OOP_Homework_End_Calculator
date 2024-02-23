@@ -20,8 +20,9 @@ public class Main {
     public static void main(String[] args) {
         DataInput dataInput = new DataInput();
         dataInput.introductionOfExample();
-        dataInput.getListCommands();
-        dataInput.getListNumbers();
+        System.out.println(dataInput.getListNumbers());
+        System.out.println(dataInput.getListCommands());
+
 
 
 
