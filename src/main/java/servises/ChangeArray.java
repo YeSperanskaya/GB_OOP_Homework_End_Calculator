@@ -15,7 +15,7 @@ public class ChangeArray {
     public void exampleSolution() {
         int i = 0;
         double newMeaning;
-        while (listNumbers.size() > 1 && i < listNumbers.size()) {
+        while (listNumbers.size() > 1) {
             if (isExistMultyDiv()) {
                 if(listCommands.get(i).equals("*")) {
                     newMeaning = calculator.sum(listNumbers.get(i), listNumbers.get(i+1));
