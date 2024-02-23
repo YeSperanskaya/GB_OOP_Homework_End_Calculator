@@ -1,5 +1,7 @@
 import view.DataInput;
 
+import java.util.Scanner;
+
 /**
  * Создать проект калькулятора комплексных чисел (достаточно сделать сложение, умножение и деление).
  * Применить при создании программы архитектурные паттерны, добавить логирование калькулятора.
@@ -20,6 +22,9 @@ public class Main {
         dataInput.introductionOfExample();
         dataInput.getListCommands();
         dataInput.getListNumbers();
+
+
+
     }
 
 
